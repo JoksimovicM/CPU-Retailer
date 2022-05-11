@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CPU_Retailer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>CPU_Retailer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="CPU_Retailer-1.0.war">
+      <element id="artifact" artifact-name="CPU_Retailer:war exploded" />
+    </root>
+  </artifact>
+</component>
