@@ -1,12 +1,23 @@
 package ch.bzz.cpu_retailer.model;
 
+import ch.bzz.cpu_retailer.data.DataHandler;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 public class CPU_Reihe {
 
+    private String reiheUUID;
     private String nameReihe;
     private String beschreibung;
-    private List<CPU> cpus;
+
+    public String getReiheUUID() {
+        return reiheUUID;
+    }
+
+    public void setReiheUUID(String reiheUUID) {
+        this.reiheUUID = reiheUUID;
+    }
 
     public String getNameReihe() {
         return nameReihe;
@@ -22,13 +33,5 @@ public class CPU_Reihe {
 
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
-    }
-
-    public List<CPU> getCpus() {
-        return cpus;
-    }
-
-    public void setCpus(List<CPU> cpus) {
-        this.cpus = cpus;
     }
 }
