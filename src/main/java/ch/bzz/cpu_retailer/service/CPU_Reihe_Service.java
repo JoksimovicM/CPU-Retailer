@@ -1,7 +1,6 @@
 package ch.bzz.cpu_retailer.service;
 
 import ch.bzz.cpu_retailer.data.DataHandler;
-import ch.bzz.cpu_retailer.model.CPU;
 import ch.bzz.cpu_retailer.model.CPU_Reihe;
 
 import javax.ws.rs.GET;

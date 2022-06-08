@@ -31,7 +31,7 @@ public class CPU_Service {
 
     /**
      * Sucht eine CPU mit der mitgegebenen UUID
-     * @param cpuUUID CPU-UUID nach der gesucht wird
+     * @param cpuUUID CPU-UUID mit der gesucht wird
      * @return cpu
      */
     @GET

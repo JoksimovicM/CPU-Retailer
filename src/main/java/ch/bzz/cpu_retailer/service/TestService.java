@@ -32,17 +32,25 @@ public class TestService {
             String filename = path.getFileName().toString();
             String folder = path.getParent().toString();
 
-            byte[] bookJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            byte[] cpuJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
             FileOutputStream fileOutputStream = new FileOutputStream(Config.getProperty("cpuJSON"));
-            fileOutputStream.write(bookJSON);
+            fileOutputStream.write(cpuJSON);
 
             path = Paths.get(Config.getProperty("reiheJSON"));
             filename = path.getFileName().toString();
             folder = path.getParent().toString();
 
-            byte[] publisherJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            byte[] reiheJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
             fileOutputStream = new FileOutputStream(Config.getProperty("reiheJSON"));
-            fileOutputStream.write(publisherJSON);
+            fileOutputStream.write(reiheJSON);
+
+            path = Paths.get(Config.getProperty("herstellerJSON"));
+            filename = path.getFileName().toString();
+            folder = path.getParent().toString();
+
+            byte[] herstellerJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            fileOutputStream = new FileOutputStream(Config.getProperty("herstellerJSON"));
+            fileOutputStream.write(herstellerJSON);
         } catch (IOException e) {
             e.printStackTrace();
         }

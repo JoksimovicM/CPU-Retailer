@@ -22,6 +22,7 @@ public class Config extends Application {
         providers.add(TestService.class);
         providers.add(CPU_Service.class);
         providers.add(CPU_Reihe_Service.class);
+        providers.add(Hersteller_Service.class);
         return providers;
     }
 

@@ -6,10 +6,32 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 public class CPU_Reihe {
+    @JsonIgnore
+    private Hersteller hersteller;
 
     private String reiheUUID;
     private String nameReihe;
     private String beschreibung;
+
+    public String getHerstellerUUID() {
+        if (getHersteller() == null) return null;
+        return getHersteller().getHerstellerUUID();
+    }
+
+    public void setHerstellerUUID(String herstellerUUID) {
+        setHersteller(new Hersteller());
+        Hersteller hersteller = DataHandler.leseHerstellerMitUUID(herstellerUUID);
+        getHersteller().setHerstellerUUID(herstellerUUID);
+        getHersteller().setHerstellerName(hersteller.getHerstellerName());
+    }
+
+    public Hersteller getHersteller() {
+        return hersteller;
+    }
+
+    public void setHersteller(Hersteller hersteller) {
+        this.hersteller = hersteller;
+    }
 
     public String getReiheUUID() {
         return reiheUUID;

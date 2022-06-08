@@ -2,6 +2,7 @@ package ch.bzz.cpu_retailer.data;
 
 import ch.bzz.cpu_retailer.model.CPU;
 import ch.bzz.cpu_retailer.model.CPU_Reihe;
+import ch.bzz.cpu_retailer.model.Hersteller;
 import ch.bzz.cpu_retailer.service.Config;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +20,7 @@ public class DataHandler {
     private static DataHandler instance;
     private static List<CPU> cpuListe;
     private static List<CPU_Reihe> reiheListe;
+    private static List<Hersteller> herstellerListe;
 
     private DataHandler() {
     }
@@ -26,6 +28,7 @@ public class DataHandler {
     public static void initListen() {
         DataHandler.setCPUListe(null);
         DataHandler.setReiheListe(null);
+        DataHandler.setHerstellerListe(null);
     }
 
     public static List<CPU> leseAlleCPUs() {
@@ -59,6 +62,20 @@ public class DataHandler {
             }
         }
         return reihe;
+    }
+
+    public static List<Hersteller> leseAlleHersteller() {
+        return getHerstellerListe();
+    }
+
+    public static Hersteller leseHerstellerMitUUID(String herstellerUUID) {
+        Hersteller hersteller = null;
+        for (Hersteller entry : getHerstellerListe()) {
+            if (entry.getHerstellerUUID().equals(herstellerUUID)) {
+                hersteller = entry;
+            }
+        }
+        return hersteller;
     }
 
     private static void leseCpuJSON() {
@@ -109,6 +126,23 @@ public class DataHandler {
         }
     }
 
+    private static void leseHerstellerJSON() {
+        try {
+            String path = Config.getProperty("herstellerJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Hersteller[] alleHersteller = objectMapper.readValue(jsonData, Hersteller[].class);
+            for (Hersteller hersteller : alleHersteller) {
+                getHerstellerListe().add(hersteller);
+            }
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     private static List<CPU> getCPUListe() {
         if (cpuListe == null) {
             setCPUListe(new ArrayList<>());
@@ -131,5 +165,17 @@ public class DataHandler {
 
     private static void setReiheListe(List<CPU_Reihe> reiheListe) {
         DataHandler.reiheListe = reiheListe;
+    }
+
+    private static List<Hersteller> getHerstellerListe() {
+        if (herstellerListe == null) {
+            setHerstellerListe(new ArrayList<>());
+            leseHerstellerJSON();
+        }
+        return herstellerListe;
+    }
+
+    private static void setHerstellerListe(List<Hersteller> herstellerListe) {
+        DataHandler.herstellerListe = herstellerListe;
     }
 }
