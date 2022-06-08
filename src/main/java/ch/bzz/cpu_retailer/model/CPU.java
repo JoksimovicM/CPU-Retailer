@@ -18,8 +18,8 @@ public class CPU {
     private BigDecimal preis;
 
     /**
-     * gets the reiheUUID from the CPU-Reihe-object
-     * @return the reiheUUID
+     * Holt die reiheUUID des CPU-Reihe-Objekts
+     * @return reiheUUID
      */
     public String getReiheUUID() {
         if (getReihe()== null) return null;
@@ -27,29 +27,29 @@ public class CPU {
     }
 
     /**
-     * creates a CPU-Reihe-object without the cpulist
-     * @param ReiheUUID the key
+     * Erstellt ein CPU-Reihe-Objekt ohne die CPU-Liste
+     * @param reiheUUID the key
      */
-    public void setReiheUUID(String ReiheUUID) {
+    public void setReiheUUID(String reiheUUID) {
         setReihe(new CPU_Reihe());
-        CPU_Reihe cpu_reihe = DataHandler.getInstance().readReiheByUUID(ReiheUUID);
-        getReihe().setReiheUUID(ReiheUUID);
+        CPU_Reihe cpu_reihe = DataHandler.leseReiheMitUUID(reiheUUID);
+        getReihe().setReiheUUID(reiheUUID);
         getReihe().setNameReihe(cpu_reihe.getNameReihe());
     }
 
     /**
-     * gets cpu_reihe
+     * Holt cpu_reihe
      *
-     * @return value of cpu_reihe
+     * @return Wert von cpu_reihe
      */
     public CPU_Reihe getReihe() {
         return cpu_reihe;
     }
 
     /**
-     * sets cpu_reihe
+     * Setzt cpu_reihe
      *
-     * @param cpu_reihe the value to set
+     * @param cpu_reihe der zu setzende Wert
      */
     public void setReihe(CPU_Reihe cpu_reihe) {
         this.cpu_reihe = cpu_reihe;
