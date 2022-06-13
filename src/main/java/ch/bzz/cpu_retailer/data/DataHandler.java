@@ -17,7 +17,6 @@ import java.util.List;
 
 public class DataHandler {
 
-    private static DataHandler instance;
     private static List<CPU> cpuListe;
     private static List<CPU_Reihe> reiheListe;
     private static List<Hersteller> herstellerListe;
@@ -47,7 +46,22 @@ public class DataHandler {
 
     public static void cpuHinzu(CPU cpu) {
         getCPUListe().add(cpu);
-        schreibeCPUJSON();
+        schreibeCpuJSON();
+    }
+
+    public static void cpuAktuell() {
+        schreibeCpuJSON();
+    }
+
+    public static boolean cpuLoeschen(String cpuUUID) {
+        CPU cpu = leseCPUMitUUID(cpuUUID);
+        if (cpu != null) {
+            getCPUListe().remove(cpu);
+            schreibeCpuJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static List<CPU_Reihe> leseAlleReihen() {
@@ -93,7 +107,7 @@ public class DataHandler {
         }
     }
 
-    private static void schreibeCPUJSON() {
+    private static void schreibeCpuJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;

@@ -521,6 +521,19 @@
 			"item": [
 				{
 					"name": "2.1 Neue CPU",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -576,6 +589,131 @@
 								"resource",
 								"cpu",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 CPU aktualisieren",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cpuUUID",
+									"value": "29ec9509-b760-4f96-b2f0-ba775909e2ef",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "5600X",
+									"type": "text"
+								},
+								{
+									"key": "anzahlKerne",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "reiheUUID",
+									"value": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
+									"type": "text"
+								},
+								{
+									"key": "stromverbrauch",
+									"value": "65",
+									"type": "text"
+								},
+								{
+									"key": "taktfrequenz",
+									"value": "3.7",
+									"type": "text"
+								},
+								{
+									"key": "sockel",
+									"value": "AM4",
+									"type": "text"
+								},
+								{
+									"key": "preis",
+									"value": "249.00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"cpu",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.1 CPU löschen",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/delete?cpuUUID=450d4c30-3f1d-4fe9-a325-6a83a928eb5b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"cpu",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "cpuUUID",
+									"value": "450d4c30-3f1d-4fe9-a325-6a83a928eb5b"
+								}
 							]
 						}
 					},
