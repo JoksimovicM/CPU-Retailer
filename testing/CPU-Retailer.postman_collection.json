@@ -595,6 +595,61 @@
 					"response": []
 				},
 				{
+					"name": "2.2 Neue Reihe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 3",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "4 Kerne, 8 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "3.1 CPU aktualisieren",
 					"event": [
 						{
@@ -675,6 +730,66 @@
 					"response": []
 				},
 				{
+					"name": "3.2 Reihe aktualisieren",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 9",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "12 Kerne, 24 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "4.1 CPU löschen",
 					"event": [
 						{
@@ -713,6 +828,47 @@
 								{
 									"key": "cpuUUID",
 									"value": "450d4c30-3f1d-4fe9-a325-6a83a928eb5b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.2 Reihe löschen",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "reiheUUID",
+									"value": "5f376e30-6f1e-45ba-8229-b2967a3a38cc"
 								}
 							]
 						}

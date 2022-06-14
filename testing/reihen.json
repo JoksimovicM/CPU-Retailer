@@ -10,5 +10,11 @@
         "nameReihe": "Ryzen 7",
         "beschreibung": "8 Kerne, 16 Threads",
         "herstellerUUID": "ae73321e-31f4-4cbc-a751-55b575dd992f"
+    },
+    {
+        "reiheUUID": "5f376e30-6f1e-45ba-8229-b2967a3a38cc",
+        "nameReihe": "Core i5",
+        "beschreibung": "6 Kerne, 12 Threads",
+        "herstellerUUID": "0731b62d-d51d-4543-856a-431ce376db93"    
     }
 ]
