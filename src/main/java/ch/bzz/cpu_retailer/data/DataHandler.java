@@ -17,7 +17,6 @@ import java.util.List;
 
 public class DataHandler {
 
-    private static DataHandler instance;
     private static List<CPU> cpuListe;
     private static List<CPU_Reihe> reiheListe;
     private static List<Hersteller> herstellerListe;
@@ -47,7 +46,22 @@ public class DataHandler {
 
     public static void cpuHinzu(CPU cpu) {
         getCPUListe().add(cpu);
-        schreibeCPUJSON();
+        schreibeCpuJSON();
+    }
+
+    public static void cpuAktuell() {
+        schreibeCpuJSON();
+    }
+
+    public static boolean cpuLoeschen(String cpuUUID) {
+        CPU cpu = leseCPUMitUUID(cpuUUID);
+        if (cpu != null) {
+            getCPUListe().remove(cpu);
+            schreibeCpuJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static List<CPU_Reihe> leseAlleReihen() {
@@ -64,6 +78,26 @@ public class DataHandler {
         return reihe;
     }
 
+    public static void reiheHinzu(CPU_Reihe reihe) {
+        getReiheListe().add(reihe);
+        schreibeReiheJSON();
+    }
+
+    public static void reiheAktuell() {
+        schreibeReiheJSON();
+    }
+
+    public static boolean reiheLoeschen(String reiheUUID) {
+        CPU_Reihe reihe = leseReiheMitUUID(reiheUUID);
+        if (reihe != null) {
+            getReiheListe().remove(reihe);
+            schreibeReiheJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static List<Hersteller> leseAlleHersteller() {
         return getHerstellerListe();
     }
@@ -76,6 +110,26 @@ public class DataHandler {
             }
         }
         return hersteller;
+    }
+
+    public static void herstellerHinzu(Hersteller hersteller) {
+        getHerstellerListe().add(hersteller);
+        schreibeHerstellerJSON();
+    }
+
+    public static void herstellerAktuell() {
+        schreibeHerstellerJSON();
+    }
+
+    public static boolean herstellerLoeschen(String herstellerUUID) {
+        Hersteller hersteller = leseHerstellerMitUUID(herstellerUUID);
+        if (hersteller != null) {
+            getHerstellerListe().remove(hersteller);
+            schreibeHerstellerJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private static void leseCpuJSON() {
@@ -93,15 +147,15 @@ public class DataHandler {
         }
     }
 
-    private static void schreibeCPUJSON() {
+    private static void schreibeCpuJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String cpuPath = Config.getProperty("cpuJSON");
+        String cpuPfad = Config.getProperty("cpuJSON");
         try {
-            fileOutputStream = new FileOutputStream(cpuPath);
+            fileOutputStream = new FileOutputStream(cpuPfad);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
             objectWriter.writeValue(fileWriter, getCPUListe());
         } catch (IOException ex) {
@@ -126,6 +180,22 @@ public class DataHandler {
         }
     }
 
+    private static void schreibeReiheJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String reihePfad = Config.getProperty("reiheJSON");
+        try {
+            fileOutputStream = new FileOutputStream(reihePfad);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getReiheListe());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     private static void leseHerstellerJSON() {
         try {
             String path = Config.getProperty("herstellerJSON");
@@ -139,6 +209,22 @@ public class DataHandler {
             }
         }
         catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static void schreibeHerstellerJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String herstellerPfad = Config.getProperty("herstellerJSON");
+        try {
+            fileOutputStream = new FileOutputStream(herstellerPfad);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getHerstellerListe());
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }

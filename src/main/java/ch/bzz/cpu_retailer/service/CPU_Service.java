@@ -96,4 +96,69 @@ public class CPU_Service {
 
         return response;
     }
+
+    /*
+    * Service zum updaten einer CPU
+     */
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response aktualisiereCPU(
+            @FormParam("cpuUUID") String cpuUUID,
+            @FormParam("name") String name,
+            @FormParam("anzahlKerne") Integer anzahlKerne,
+            @FormParam("stromverbrauch") Integer stromverbrauch,
+            @FormParam("taktfrequenz") Double taktfrequenz,
+            @FormParam("sockel") String sockel,
+            @FormParam("preis") BigDecimal preis,
+            @FormParam("reiheUUID") String reiheUUID
+    ) {
+        int httpstatus;
+        if (cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            CPU cpu = DataHandler.leseCPUMitUUID(cpuUUID);
+            if (cpu != null) {
+                cpu.setName(name);
+                cpu.setAnzahlKerne(anzahlKerne);
+                cpu.setStromverbrauch(stromverbrauch);
+                cpu.setTaktfrequenz(taktfrequenz);
+                cpu.setSockel(sockel);
+                cpu.setPreis(preis);
+                cpu.setReiheUUID(reiheUUID);
+                DataHandler.cpuAktuell();
+                httpstatus = 200;
+            } else {
+                httpstatus = 404;
+            }
+        } else {
+            httpstatus = 400;
+        }
+
+        Response response = Response
+                .status(httpstatus)
+                .entity("")
+                .build();
+        return response;
+    }
+
+    @DELETE
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response cpuLoeschen(
+            @QueryParam("cpuUUID") String cpuUUID
+    ) {
+        int httpstatus;
+        if (cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            httpstatus = 200;
+            if (!DataHandler.cpuLoeschen(cpuUUID)) {
+                httpstatus = 410;
+            }
+        } else {
+            httpstatus = 400;
+        }
+
+        return Response
+                .status(httpstatus)
+                .entity("")
+                .build();
+    }
 }
