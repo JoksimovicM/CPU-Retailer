@@ -2309,6 +2309,371 @@
 					"response": []
 				},
 				{
+					"name": "1.14 Reihe erstellen, Name Reihe zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "R",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "4 Kerne, 8 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.15 Reihe erstellen, Name Reihe zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "Ryzen Epyc Threadripper",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "4 Kerne, 8 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.16 Reihe erstellen, Beschreibung zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 5",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "E",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.17 Reihe erstellen, Beschreibung zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 5",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "Eflsöahegusahdsjhofeadsioglkhylhsdhfasedieozighadslö",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.18 Reihe erstellen, HerstellerUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 5",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "4 Kerne, 8 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.19 Hersteller erstellen, Herstellername zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerName",
+									"value": "H",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.20 Hersteller erstellen, Herstellername zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerName",
+									"value": "HJJHhhsdfhEIIEEWW",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "2.1 CPU aktualisieren, Name zu kurz",
 					"event": [
 						{
@@ -3429,6 +3794,516 @@
 					"response": []
 				},
 				{
+					"name": "2.15 Reihe aktualisieren, Name Reihe zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "R",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "12 Kerne, 24 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.16 Reihe aktualisieren, Name Reihe zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Rasdfdsdsbasraserdsagyabsdgasfds",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "12 Kerne, 24 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.17 Reihe aktualisieren, Beschreibung zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 9",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "E",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.18 Reihe aktualisieren, Beschreibung zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 9",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "Ejewziuofgsajkgsdiylauzsdfoezgiuoa",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.19 Reihe aktualisieren, HerstellerUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 9",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "12 Kerne, 24 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.20 Reihe aktualisieren, ReiheUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e9425547133",
+									"type": "text"
+								},
+								{
+									"key": "nameReihe",
+									"value": "Ryzen 9",
+									"type": "text"
+								},
+								{
+									"key": "beschreibung",
+									"value": "12 Kerne, 24 Threads",
+									"type": "text"
+								},
+								{
+									"key": "herstellerUUID",
+									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.21 Hersteller aktualisieren, Herstellername zu kurz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerUUID",
+									"value": "0731b62d-d51d-4543-856a-431ce376db93",
+									"type": "text"
+								},
+								{
+									"key": "herstellerName",
+									"value": "A",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.22 Hersteller aktualisieren, Herstellername zu lang",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerUUID",
+									"value": "0731b62d-d51d-4543-856a-431ce376db93",
+									"type": "text"
+								},
+								{
+									"key": "herstellerName",
+									"value": "AHHHfffjasdkflkdeaz",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.23 Hersteller aktualisieren, HerstellerUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerUUID",
+									"value": "0731b62d-d51d-4543-856a-431ce376db9",
+									"type": "text"
+								},
+								{
+									"key": "herstellerName",
+									"value": "ASUS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "3.1 CPU löschen, CPU-UUID formal falsch",
 					"event": [
 						{
@@ -3467,6 +4342,96 @@
 								{
 									"key": "cpuUUID",
 									"value": "cdde67c9-0b53-415d-ad5e-ab75e8c6f44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 Reihe löschen, ReiheUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=6efe75bf-fb5d-4d75-b923-e9425547133",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"reihe",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "reiheUUID",
+									"value": "6efe75bf-fb5d-4d75-b923-e9425547133"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 Hersteller löschen, HerstellerUUID formal falsch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da2756374",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "herstellerUUID",
+									"value": "014d6fad-dbea-496d-a19e-57da2756374"
 								}
 							]
 						}
