@@ -4,6 +4,7 @@ package ch.bzz.cpu_retailer.service;
 import ch.bzz.cpu_retailer.data.DataHandler;
 import ch.bzz.cpu_retailer.model.CPU;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -62,24 +63,13 @@ public class CPU_Service {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response erstelleCPU (
-            @FormParam("name") String name,
-            @FormParam("anzahlKerne") Integer anzahlKerne,
-            @FormParam("stromverbrauch") Integer stromverbrauch,
-            @FormParam("taktfrequenz") Double taktfrequenz,
-            @FormParam("sockel") String sockel,
-            @FormParam("preis") BigDecimal preis,
+            @Valid @BeanParam CPU cpu,
             @FormParam("reiheUUID") String reiheUUID
             ) {
         int httpstatus;
-        CPU cpu = new CPU();
+        String msg = "";
         cpu.setCpuUUID(UUID.randomUUID().toString());
         if (reiheUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
-            cpu.setName(name);
-            cpu.setAnzahlKerne(anzahlKerne);
-            cpu.setStromverbrauch(stromverbrauch);
-            cpu.setTaktfrequenz(taktfrequenz);
-            cpu.setSockel(sockel);
-            cpu.setPreis(preis);
             cpu.setReiheUUID(reiheUUID);
 
             httpstatus = 200;
@@ -87,11 +77,12 @@ public class CPU_Service {
             DataHandler.cpuHinzu(cpu);
         } else {
             httpstatus = 400;
+            msg = "Fehler: Ungueltige reiheUUID";
         }
 
         Response response = Response
                 .status(httpstatus)
-                .entity("")
+                .entity(msg)
                 .build();
 
         return response;
@@ -104,38 +95,35 @@ public class CPU_Service {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response aktualisiereCPU(
-            @FormParam("cpuUUID") String cpuUUID,
-            @FormParam("name") String name,
-            @FormParam("anzahlKerne") Integer anzahlKerne,
-            @FormParam("stromverbrauch") Integer stromverbrauch,
-            @FormParam("taktfrequenz") Double taktfrequenz,
-            @FormParam("sockel") String sockel,
-            @FormParam("preis") BigDecimal preis,
+            @Valid @BeanParam CPU cpu,
             @FormParam("reiheUUID") String reiheUUID
     ) {
         int httpstatus;
-        if (cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
-            CPU cpu = DataHandler.leseCPUMitUUID(cpuUUID);
-            if (cpu != null) {
-                cpu.setName(name);
-                cpu.setAnzahlKerne(anzahlKerne);
-                cpu.setStromverbrauch(stromverbrauch);
-                cpu.setTaktfrequenz(taktfrequenz);
-                cpu.setSockel(sockel);
-                cpu.setPreis(preis);
-                cpu.setReiheUUID(reiheUUID);
+        String msg = "";
+        if (reiheUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            CPU alteCPU = DataHandler.leseCPUMitUUID(cpu.getCpuUUID());
+            if (alteCPU != null) {
+                alteCPU.setName(cpu.getName());
+                alteCPU.setAnzahlKerne(cpu.getAnzahlKerne());
+                alteCPU.setStromverbrauch(cpu.getStromverbrauch());
+                alteCPU.setTaktfrequenz(cpu.getTaktfrequenz());
+                alteCPU.setSockel(cpu.getSockel());
+                alteCPU.setPreis(cpu.getPreis());
+                alteCPU.setReiheUUID(reiheUUID);
                 DataHandler.cpuAktuell();
                 httpstatus = 200;
             } else {
                 httpstatus = 404;
+                msg = "CPU mit dieser UUID existiert nicht";
             }
         } else {
             httpstatus = 400;
+            msg = "Fehler: Ungueltige reiheUUID";
         }
 
         Response response = Response
                 .status(httpstatus)
-                .entity("")
+                .entity(msg)
                 .build();
         return response;
     }
@@ -147,18 +135,21 @@ public class CPU_Service {
             @QueryParam("cpuUUID") String cpuUUID
     ) {
         int httpstatus;
+        String msg = "";
         if (cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
             httpstatus = 200;
             if (!DataHandler.cpuLoeschen(cpuUUID)) {
                 httpstatus = 410;
+                msg = "CPU mit dieser UUID existiert nicht";
             }
         } else {
             httpstatus = 400;
+            msg = "CPU-UUID formal falsch";
         }
 
         return Response
                 .status(httpstatus)
-                .entity("")
+                .entity(msg)
                 .build();
     }
 }
