@@ -112,6 +112,26 @@ public class DataHandler {
         return hersteller;
     }
 
+    public static void herstellerHinzu(Hersteller hersteller) {
+        getHerstellerListe().add(hersteller);
+        schreibeHerstellerJSON();
+    }
+
+    public static void herstellerAktuell() {
+        schreibeHerstellerJSON();
+    }
+
+    public static boolean herstellerLoeschen(String herstellerUUID) {
+        Hersteller hersteller = leseHerstellerMitUUID(herstellerUUID);
+        if (hersteller != null) {
+            getHerstellerListe().remove(hersteller);
+            schreibeHerstellerJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     private static void leseCpuJSON() {
         try {
             String path = Config.getProperty("cpuJSON");
@@ -170,7 +190,7 @@ public class DataHandler {
         try {
             fileOutputStream = new FileOutputStream(reihePfad);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getCPUListe());
+            objectWriter.writeValue(fileWriter, getReiheListe());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -189,6 +209,22 @@ public class DataHandler {
             }
         }
         catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static void schreibeHerstellerJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String herstellerPfad = Config.getProperty("herstellerJSON");
+        try {
+            fileOutputStream = new FileOutputStream(herstellerPfad);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getHerstellerListe());
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }

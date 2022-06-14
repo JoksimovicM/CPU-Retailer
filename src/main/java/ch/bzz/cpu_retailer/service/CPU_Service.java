@@ -133,7 +133,6 @@ public class CPU_Service {
             httpstatus = 400;
         }
 
-
         Response response = Response
                 .status(httpstatus)
                 .entity("")

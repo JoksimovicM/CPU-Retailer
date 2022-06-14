@@ -650,6 +650,51 @@
 					"response": []
 				},
 				{
+					"name": "2.3 Neuer Hersteller",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerName",
+									"value": "HP",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "3.1 CPU aktualisieren",
 					"event": [
 						{
@@ -790,6 +835,56 @@
 					"response": []
 				},
 				{
+					"name": "3.3 Hersteller aktualisieren",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "herstellerUUID",
+									"value": "0731b62d-d51d-4543-856a-431ce376db93",
+									"type": "text"
+								},
+								{
+									"key": "herstellerName",
+									"value": "ASUS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "4.1 CPU löschen",
 					"event": [
 						{
@@ -869,6 +964,34 @@
 								{
 									"key": "reiheUUID",
 									"value": "5f376e30-6f1e-45ba-8229-b2967a3a38cc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.3 Hersteller löschen",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da27563741",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"CPU_Retailer-1.0",
+								"resource",
+								"hersteller",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "herstellerUUID",
+									"value": "014d6fad-dbea-496d-a19e-57da27563741"
 								}
 							]
 						}
