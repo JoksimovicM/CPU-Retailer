@@ -5,6 +5,7 @@ import ch.bzz.cpu_retailer.model.CPU;
 import ch.bzz.cpu_retailer.model.CPU_Reihe;
 import ch.bzz.cpu_retailer.model.Hersteller;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -58,11 +59,10 @@ public class Hersteller_Service {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response erstelleHersteller (
-            @FormParam("herstellerName") String herstellerName
+            @Valid @BeanParam Hersteller hersteller
     ) {
-        Hersteller hersteller = new Hersteller();
         hersteller.setHerstellerUUID(UUID.randomUUID().toString());
-        hersteller.setHerstellerName(herstellerName);
+        hersteller.setHerstellerName(hersteller.getHerstellerName());
 
         DataHandler.herstellerHinzu(hersteller);
 
@@ -78,28 +78,30 @@ public class Hersteller_Service {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response aktualisiereHersteller(
-            @FormParam("herstellerUUID") String herstellerUUID,
-            @FormParam("herstellerName") String herstellerName
+            @Valid @BeanParam Hersteller hersteller
     ) {
         int httpstatus;
-        if (herstellerUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
-            Hersteller hersteller = DataHandler.leseHerstellerMitUUID(herstellerUUID);
-            if (hersteller != null) {
-                hersteller.setHerstellerName(herstellerName);
+        String msg = "";
+        if (hersteller.getHerstellerUUID().matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            Hersteller alterHersteller = DataHandler.leseHerstellerMitUUID(hersteller.getHerstellerUUID());
+            if (alterHersteller != null) {
+                alterHersteller.setHerstellerName(hersteller.getHerstellerName());
 
                 DataHandler.herstellerAktuell();
 
                 httpstatus = 200;
             } else {
                 httpstatus = 404;
+                msg = "Hersteller mit dieser UUID existiert nicht";
             }
         } else {
             httpstatus = 400;
+            msg = "Fehler: Ungueltige herstellerUUID";
         }
 
         Response response = Response
                 .status(httpstatus)
-                .entity("")
+                .entity(msg)
                 .build();
         return response;
     }
@@ -111,18 +113,21 @@ public class Hersteller_Service {
             @QueryParam("herstellerUUID") String herstellerUUID
     ) {
         int httpstatus;
+        String msg = "";
         if (herstellerUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
             httpstatus = 200;
             if (!DataHandler.herstellerLoeschen(herstellerUUID)) {
                 httpstatus = 410;
+                msg = "Hersteller mit dieser UUID existiert nicht";
             }
         } else {
             httpstatus = 400;
+            msg = "Fehler: Ungueltige herstellerUUID";
         }
 
         return Response
                 .status(httpstatus)
-                .entity("")
+                .entity(msg)
                 .build();
     }
 }

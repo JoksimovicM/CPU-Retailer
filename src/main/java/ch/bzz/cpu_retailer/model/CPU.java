@@ -3,18 +3,46 @@ package ch.bzz.cpu_retailer.model;
 import ch.bzz.cpu_retailer.data.DataHandler;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
 import java.math.BigDecimal;
 
 public class CPU {
     @JsonIgnore
     private CPU_Reihe cpu_reihe;
 
+    @FormParam("cpuUUID")
+    @Pattern(regexp = "[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")
     private String cpuUUID;
+
+    @FormParam("name")
+    @NotEmpty
+    @Size(min = 2, max = 10)
     private String name;
+
+    @FormParam("anzahlKerne")
+    @DecimalMin(value = "1")
+    @DecimalMax(value = "64")
     private Integer anzahlKerne;
+
+    @FormParam("stromverbrauch")
+    @DecimalMin(value = "50")
+    @DecimalMax(value = "4000")
     private Integer stromverbrauch;
-    private Double taktfrequenz;
+
+    @FormParam("taktfrequenz")
+    @DecimalMin(value = "1.0")
+    @DecimalMax(value = "7.0")
+    private BigDecimal taktfrequenz;
+
+    @FormParam("sockel")
+    @NotEmpty
+    @Size(min = 2, max = 10)
     private String sockel;
+
+    @FormParam("preis")
+    @DecimalMin(value = "20.00")
+    @DecimalMax(value = "1000.00")
     private BigDecimal preis;
 
     /**
@@ -87,11 +115,11 @@ public class CPU {
         this.stromverbrauch = stromverbrauch;
     }
 
-    public Double getTaktfrequenz() {
+    public BigDecimal getTaktfrequenz() {
         return taktfrequenz;
     }
 
-    public void setTaktfrequenz(Double taktfrequenz) {
+    public void setTaktfrequenz(BigDecimal taktfrequenz) {
         this.taktfrequenz = taktfrequenz;
     }
 
