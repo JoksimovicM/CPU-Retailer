@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 public class CPU {
     @JsonIgnore
-    private CPU_Reihe cpu_reihe;
+    private CPU_Series cpu_series;
 
     @FormParam("cpuUUID")
     @Pattern(regexp = "[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")
@@ -20,49 +20,49 @@ public class CPU {
     @Size(min = 2, max = 10)
     private String name;
 
-    @FormParam("anzahlKerne")
+    @FormParam("coreCount")
     @DecimalMin(value = "1")
     @DecimalMax(value = "64")
-    private Integer anzahlKerne;
+    private Integer coreCount;
 
-    @FormParam("stromverbrauch")
+    @FormParam("tdp")
     @DecimalMin(value = "50")
     @DecimalMax(value = "4000")
-    private Integer stromverbrauch;
+    private Integer tdp;
 
-    @FormParam("taktfrequenz")
+    @FormParam("frequency")
     @DecimalMin(value = "1.0")
     @DecimalMax(value = "7.0")
-    private BigDecimal taktfrequenz;
+    private BigDecimal frequency;
 
-    @FormParam("sockel")
+    @FormParam("socket")
     @NotEmpty
     @Size(min = 2, max = 10)
-    private String sockel;
+    private String socket;
 
-    @FormParam("preis")
+    @FormParam("price")
     @DecimalMin(value = "20.00")
     @DecimalMax(value = "1000.00")
-    private BigDecimal preis;
+    private BigDecimal price;
 
     /**
      * Holt die reiheUUID des CPU-Reihe-Objekts
      * @return reiheUUID
      */
-    public String getReiheUUID() {
-        if (getReihe()== null) return null;
-        return getReihe().getReiheUUID();
+    public String getSeriesUUID() {
+        if (getSeries()== null) return null;
+        return getSeries().getSeriesUUID();
     }
 
     /**
      * Erstellt ein CPU-Reihe-Objekt ohne die CPU-Liste
-     * @param reiheUUID the key
+     * @param seriesUUID the key
      */
-    public void setReiheUUID(String reiheUUID) {
-        setReihe(new CPU_Reihe());
-        CPU_Reihe cpu_reihe = DataHandler.leseReiheMitUUID(reiheUUID);
-        getReihe().setReiheUUID(reiheUUID);
-        getReihe().setNameReihe(cpu_reihe.getNameReihe());
+    public void setSeriesUUID(String seriesUUID) {
+        setSeries(new CPU_Series());
+        CPU_Series cpu_series = DataHandler.readSeriesbyUUID(seriesUUID);
+        getSeries().setSeriesUUID(seriesUUID);
+        getSeries().setSeriesName(cpu_series.getSeriesName());
     }
 
     /**
@@ -70,23 +70,30 @@ public class CPU {
      *
      * @return Wert von cpu_reihe
      */
-    public CPU_Reihe getReihe() {
-        return cpu_reihe;
+    public CPU_Series getSeries() {
+        return cpu_series;
     }
 
     /**
      * Setzt cpu_reihe
      *
-     * @param cpu_reihe der zu setzende Wert
+     * @param cpu_series der zu setzende Wert
      */
-    public void setReihe(CPU_Reihe cpu_reihe) {
-        this.cpu_reihe = cpu_reihe;
+    public void setSeries(CPU_Series cpu_series) {
+        this.cpu_series = cpu_series;
     }
 
+    /**
+     * @return
+     */
     public String getCpuUUID() {
         return cpuUUID;
     }
 
+
+    /**
+     * @param cpuUUID
+     */
     public void setCpuUUID(String cpuUUID) {
         this.cpuUUID = cpuUUID;
     }
@@ -99,43 +106,43 @@ public class CPU {
         this.name = name;
     }
 
-    public Integer getAnzahlKerne() {
-        return anzahlKerne;
+    public Integer getCoreCount() {
+        return coreCount;
     }
 
-    public void setAnzahlKerne(Integer anzahlKerne) {
-        this.anzahlKerne = anzahlKerne;
+    public void setCoreCount(Integer coreCount) {
+        this.coreCount = coreCount;
     }
 
-    public Integer getStromverbrauch() {
-        return stromverbrauch;
+    public Integer getTDP() {
+        return tdp;
     }
 
-    public void setStromverbrauch(Integer stromverbrauch) {
-        this.stromverbrauch = stromverbrauch;
+    public void setTDP(Integer tdp) {
+        this.tdp = tdp;
     }
 
-    public BigDecimal getTaktfrequenz() {
-        return taktfrequenz;
+    public BigDecimal getFrequency() {
+        return frequency;
     }
 
-    public void setTaktfrequenz(BigDecimal taktfrequenz) {
-        this.taktfrequenz = taktfrequenz;
+    public void setFrequency(BigDecimal frequency) {
+        this.frequency = frequency;
     }
 
-    public String getSockel() {
-        return sockel;
+    public String getSocket() {
+        return socket;
     }
 
-    public void setSockel(String sockel) {
-        this.sockel = sockel;
+    public void setSocket(String socket) {
+        this.socket = socket;
     }
 
-    public BigDecimal getPreis() {
-        return preis;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPreis(BigDecimal preis) {
-        this.preis = preis;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

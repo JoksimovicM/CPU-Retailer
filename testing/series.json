@@ -1,0 +1,20 @@
+[
+    {
+        "seriesUUID": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
+        "seriesName": "Ryzen 5",
+        "description": "6 Kerne, 12 Threads",
+        "manufacturerUUID": "ae73321e-31f4-4cbc-a751-55b575dd992f"
+    },
+    {
+        "seriesUUID": "6efe75bf-fb5d-4d75-b923-e94255471337",
+        "seriesName": "Ryzen 7",
+        "description": "8 Kerne, 16 Threads",
+        "manufacturerUUID": "ae73321e-31f4-4cbc-a751-55b575dd992f"
+    },
+    {
+        "seriesUUID": "5f376e30-6f1e-45ba-8229-b2967a3a38cc",
+        "seriesName": "Core i5",
+        "description": "6 Kerne, 12 Threads",
+        "manufacturerUUID": "0731b62d-d51d-4543-856a-431ce376db93"    
+    }
+]
