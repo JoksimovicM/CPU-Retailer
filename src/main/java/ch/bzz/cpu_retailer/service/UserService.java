@@ -3,10 +3,7 @@ package ch.bzz.cpu_retailer.service;
 import ch.bzz.cpu_retailer.data.UserData;
 import ch.bzz.cpu_retailer.model.User;
 
-import javax.ws.rs.FormParam;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -30,6 +27,18 @@ public class UserService {
         }
         Response response = Response
                 .status(httpstatus)
+                .entity("")
+                .build();
+        return response;
+    }
+
+    @DELETE
+    @Path("logout")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response logout() {
+
+        Response response = Response
+                .status(200)
                 .entity("")
                 .build();
         return response;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU bearbeiten</title>
+    <script src="./js/cpuedit.js"></script>
+    <script src="./js/util.js"></script>
+</head>
+<body>
+<h3>CPU bearbeiten</h3>
+<form id="cpueditForm" name="cpuedit">
+    <table>
+        <tr>
+            <td><label for="name">CPU-Name</label></td>
+            <td>
+                <input id="name" name="name" type="text" size="10" minlength="2" maxlength="10" required/>
+                <input id="cpuUUID" name="cpuUUID" type="hidden"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="coreCount">Anzahl Kerne:</label></td>
+            <td><input id="coreCount" name="coreCount" type="number" ></td>
+        </tr>
+        <tr>
+            <td><label for="tdp">Stromverbrauch</label></td>
+            <td><input id="tdp" name="tdp" type="number" required></td>
+        </tr>
+        <tr>
+            <td><label for="frequency">Taktfrequenz</label></td>
+            <td><input id="frequency" name="frequency" type="number" min="0.05" max="199.95" step="0.05"/></td>
+        </tr>
+        <tr>
+            <td><label for="socket">Sockel</label></td>
+            <td><input id="socket" name="socket" type="text"/></td>
+        </tr>
+        <tr>
+            <td><label for="price">Preis</label></td>
+            <td><input id="price" name="price" type="number" min="0.05" max="199.95" step="0.05"/></td>
+        </tr>
+        <tr>
+            <td><label for="series">CPU-Reihe</label></td>
+            <td>
+                <select id="series" name="seriesUUID" required>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <button id="save" type="submit">Speichern</button>
+            </td>
+            <td>
+                <button id="reset" type="reset">Zurücksetzen</button>
+            </td>
+            <td>
+                <button id="cancel" type="button">Abbruch</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
