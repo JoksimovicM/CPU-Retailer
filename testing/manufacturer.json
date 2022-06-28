@@ -1,0 +1,14 @@
+[
+    {
+        "manufacturerUUID": "ae73321e-31f4-4cbc-a751-55b575dd992f",
+        "manufacturerName": "AMD"
+    },
+    {
+        "manufacturerUUID": "0731b62d-d51d-4543-856a-431ce376db93",
+        "manufacturerName": "Intel"
+    },
+    {
+        "manufacturerUUID": "014d6fad-dbea-496d-a19e-57da27563741",
+        "manufacturerName": "HP"
+    }
+]

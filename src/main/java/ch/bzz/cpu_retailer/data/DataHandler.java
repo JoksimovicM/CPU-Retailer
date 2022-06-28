@@ -1,8 +1,8 @@
 package ch.bzz.cpu_retailer.data;
 
 import ch.bzz.cpu_retailer.model.CPU;
-import ch.bzz.cpu_retailer.model.CPU_Reihe;
-import ch.bzz.cpu_retailer.model.Hersteller;
+import ch.bzz.cpu_retailer.model.CPU_Series;
+import ch.bzz.cpu_retailer.model.Manufacturer;
 import ch.bzz.cpu_retailer.service.Config;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,26 +17,26 @@ import java.util.List;
 
 public class DataHandler {
 
-    private static List<CPU> cpuListe;
-    private static List<CPU_Reihe> reiheListe;
-    private static List<Hersteller> herstellerListe;
+    private static List<CPU> cpuList;
+    private static List<CPU_Series> seriesList;
+    private static List<Manufacturer> manufacturerList;
 
     private DataHandler() {
     }
 
-    public static void initListen() {
-        DataHandler.setCPUListe(null);
-        DataHandler.setReiheListe(null);
-        DataHandler.setHerstellerListe(null);
+    public static void initLists() {
+        DataHandler.setCPUList(null);
+        DataHandler.setSeriesList(null);
+        DataHandler.setManufacturerList(null);
     }
 
-    public static List<CPU> leseAlleCPUs() {
-        return getCPUListe();
+    public static List<CPU> readCPUs() {
+        return getCPUList();
     }
 
-    public static CPU leseCPUMitUUID(String cpuUUID) {
+    public static CPU readCPUbyUUID(String cpuUUID) {
         CPU cpu = null;
-        for (CPU entry : getCPUListe()) {
+        for (CPU entry : getCPUList()) {
             if (entry.getCpuUUID().equals(cpuUUID)) {
                 cpu = entry;
             }
@@ -44,102 +44,102 @@ public class DataHandler {
         return cpu;
     }
 
-    public static void cpuHinzu(CPU cpu) {
-        getCPUListe().add(cpu);
-        schreibeCpuJSON();
+    public static void addCPU(CPU cpu) {
+        getCPUList().add(cpu);
+        writeCPUJSON();
     }
 
-    public static void cpuAktuell() {
-        schreibeCpuJSON();
+    public static void updateCPU() {
+        writeCPUJSON();
     }
 
-    public static boolean cpuLoeschen(String cpuUUID) {
-        CPU cpu = leseCPUMitUUID(cpuUUID);
+    public static boolean deleteCPU(String cpuUUID) {
+        CPU cpu = readCPUbyUUID(cpuUUID);
         if (cpu != null) {
-            getCPUListe().remove(cpu);
-            schreibeCpuJSON();
+            getCPUList().remove(cpu);
+            writeCPUJSON();
             return true;
         } else {
             return false;
         }
     }
 
-    public static List<CPU_Reihe> leseAlleReihen() {
-        return getReiheListe();
+    public static List<CPU_Series> readSeries() {
+        return getSeriesList();
     }
 
-    public static CPU_Reihe leseReiheMitUUID(String reiheUUID) {
-        CPU_Reihe reihe = null;
-        for (CPU_Reihe entry : getReiheListe()) {
-            if (entry.getReiheUUID().equals(reiheUUID)) {
-                reihe = entry;
+    public static CPU_Series readSeriesbyUUID(String seriesUUID) {
+        CPU_Series series = null;
+        for (CPU_Series entry : getSeriesList()) {
+            if (entry.getSeriesUUID().equals(seriesUUID)) {
+                series = entry;
             }
         }
-        return reihe;
+        return series;
     }
 
-    public static void reiheHinzu(CPU_Reihe reihe) {
-        getReiheListe().add(reihe);
-        schreibeReiheJSON();
+    public static void addSeries(CPU_Series series) {
+        getSeriesList().add(series);
+        writeSeriesJSON();
     }
 
-    public static void reiheAktuell() {
-        schreibeReiheJSON();
+    public static void updateSeries() {
+        writeSeriesJSON();
     }
 
-    public static boolean reiheLoeschen(String reiheUUID) {
-        CPU_Reihe reihe = leseReiheMitUUID(reiheUUID);
-        if (reihe != null) {
-            getReiheListe().remove(reihe);
-            schreibeReiheJSON();
+    public static boolean deleteSeries(String seriesUUID) {
+        CPU_Series series = readSeriesbyUUID(seriesUUID);
+        if (series != null) {
+            getSeriesList().remove(series);
+            writeSeriesJSON();
             return true;
         } else {
             return false;
         }
     }
 
-    public static List<Hersteller> leseAlleHersteller() {
-        return getHerstellerListe();
+    public static List<Manufacturer> readManufacturers() {
+        return getManufacturerList();
     }
 
-    public static Hersteller leseHerstellerMitUUID(String herstellerUUID) {
-        Hersteller hersteller = null;
-        for (Hersteller entry : getHerstellerListe()) {
-            if (entry.getHerstellerUUID().equals(herstellerUUID)) {
-                hersteller = entry;
+    public static Manufacturer readManufacturerbyUUID(String manufacturerUUID) {
+        Manufacturer manufacturer = null;
+        for (Manufacturer entry : getManufacturerList()) {
+            if (entry.getManufacturerUUID().equals(manufacturerUUID)) {
+                manufacturer = entry;
             }
         }
-        return hersteller;
+        return manufacturer;
     }
 
-    public static void herstellerHinzu(Hersteller hersteller) {
-        getHerstellerListe().add(hersteller);
-        schreibeHerstellerJSON();
+    public static void addManufacturer(Manufacturer manufacturer) {
+        getManufacturerList().add(manufacturer);
+        writeManufacturerJSON();
     }
 
-    public static void herstellerAktuell() {
-        schreibeHerstellerJSON();
+    public static void updateManufacturer() {
+        writeManufacturerJSON();
     }
 
-    public static boolean herstellerLoeschen(String herstellerUUID) {
-        Hersteller hersteller = leseHerstellerMitUUID(herstellerUUID);
-        if (hersteller != null) {
-            getHerstellerListe().remove(hersteller);
-            schreibeHerstellerJSON();
+    public static boolean deleteManufacturer(String manufacturerUUID) {
+        Manufacturer manufacturer = readManufacturerbyUUID(manufacturerUUID);
+        if (manufacturer != null) {
+            getManufacturerList().remove(manufacturer);
+            writeManufacturerJSON();
             return true;
         } else {
             return false;
         }
     }
 
-    private static void leseCpuJSON() {
+    private static void readCPUJSON() {
         try {
             String path = Config.getProperty("cpuJSON");
             byte[] jsonData = Files.readAllBytes(Paths.get(path));
             ObjectMapper objectMapper = new ObjectMapper();
             CPU[] cpus = objectMapper.readValue(jsonData, CPU[].class);
             for (CPU cpu : cpus) {
-                getCPUListe().add(cpu);
+                getCPUList().add(cpu);
             }
         }
         catch (IOException ex) {
@@ -147,32 +147,32 @@ public class DataHandler {
         }
     }
 
-    private static void schreibeCpuJSON() {
+    private static void writeCPUJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String cpuPfad = Config.getProperty("cpuJSON");
+        String cpuPath = Config.getProperty("cpuJSON");
         try {
-            fileOutputStream = new FileOutputStream(cpuPfad);
+            fileOutputStream = new FileOutputStream(cpuPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getCPUListe());
+            objectWriter.writeValue(fileWriter, getCPUList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    private static void leseReiheJSON() {
+    private static void readSeriesJSON() {
         try {
-            String path = Config.getProperty("reiheJSON");
+            String path = Config.getProperty("seriesJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            CPU_Reihe[] reihen = objectMapper.readValue(jsonData, CPU_Reihe[].class);
-            for (CPU_Reihe reihe : reihen) {
-                getReiheListe().add(reihe);
+            CPU_Series[] seriesC = objectMapper.readValue(jsonData, CPU_Series[].class);
+            for (CPU_Series series : seriesC) {
+                getSeriesList().add(series);
             }
         }
         catch (IOException ex) {
@@ -180,32 +180,32 @@ public class DataHandler {
         }
     }
 
-    private static void schreibeReiheJSON() {
+    private static void writeSeriesJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String reihePfad = Config.getProperty("reiheJSON");
+        String seriesPath = Config.getProperty("seriesJSON");
         try {
-            fileOutputStream = new FileOutputStream(reihePfad);
+            fileOutputStream = new FileOutputStream(seriesPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getReiheListe());
+            objectWriter.writeValue(fileWriter, getSeriesList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    private static void leseHerstellerJSON() {
+    private static void readManufacturerJSON() {
         try {
-            String path = Config.getProperty("herstellerJSON");
+            String path = Config.getProperty("manufacturerJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Hersteller[] alleHersteller = objectMapper.readValue(jsonData, Hersteller[].class);
-            for (Hersteller hersteller : alleHersteller) {
-                getHerstellerListe().add(hersteller);
+            Manufacturer[] manufacturers = objectMapper.readValue(jsonData, Manufacturer[].class);
+            for (Manufacturer manufacturer : manufacturers) {
+                getManufacturerList().add(manufacturer);
             }
         }
         catch (IOException ex) {
@@ -213,55 +213,55 @@ public class DataHandler {
         }
     }
 
-    private static void schreibeHerstellerJSON() {
+    private static void writeManufacturerJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String herstellerPfad = Config.getProperty("herstellerJSON");
+        String manufacturerPath = Config.getProperty("manufacturerJSON");
         try {
-            fileOutputStream = new FileOutputStream(herstellerPfad);
+            fileOutputStream = new FileOutputStream(manufacturerPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getHerstellerListe());
+            objectWriter.writeValue(fileWriter, getManufacturerList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    private static List<CPU> getCPUListe() {
-        if (cpuListe == null) {
-            setCPUListe(new ArrayList<>());
-            leseCpuJSON();
+    private static List<CPU> getCPUList() {
+        if (cpuList == null) {
+            setCPUList(new ArrayList<>());
+            readCPUJSON();
         }
-        return cpuListe;
+        return cpuList;
     }
 
-    private static void setCPUListe(List<CPU> cpuListe) {
-        DataHandler.cpuListe = cpuListe;
+    private static void setCPUList(List<CPU> cpuList) {
+        DataHandler.cpuList = cpuList;
     }
 
-    private static List<CPU_Reihe> getReiheListe() {
-        if (reiheListe == null) {
-            setReiheListe(new ArrayList<>());
-            leseReiheJSON();
+    private static List<CPU_Series> getSeriesList() {
+        if (seriesList == null) {
+            setSeriesList(new ArrayList<>());
+            readSeriesJSON();
         }
-        return reiheListe;
+        return seriesList;
     }
 
-    private static void setReiheListe(List<CPU_Reihe> reiheListe) {
-        DataHandler.reiheListe = reiheListe;
+    private static void setSeriesList(List<CPU_Series> seriesList) {
+        DataHandler.seriesList = seriesList;
     }
 
-    private static List<Hersteller> getHerstellerListe() {
-        if (herstellerListe == null) {
-            setHerstellerListe(new ArrayList<>());
-            leseHerstellerJSON();
+    private static List<Manufacturer> getManufacturerList() {
+        if (manufacturerList == null) {
+            setManufacturerList(new ArrayList<>());
+            readManufacturerJSON();
         }
-        return herstellerListe;
+        return manufacturerList;
     }
 
-    private static void setHerstellerListe(List<Hersteller> herstellerListe) {
-        DataHandler.herstellerListe = herstellerListe;
+    private static void setManufacturerList(List<Manufacturer> manufacturerList) {
+        DataHandler.manufacturerList = manufacturerList;
     }
 }

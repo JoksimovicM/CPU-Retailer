@@ -21,8 +21,8 @@ public class Config extends Application {
         HashSet providers = new HashSet<Class<?>>();
         providers.add(TestService.class);
         providers.add(CPU_Service.class);
-        providers.add(CPU_Reihe_Service.class);
-        providers.add(Hersteller_Service.class);
+        providers.add(CPU_Series_Service.class);
+        providers.add(Manufacturer_Service.class);
         return providers;
     }
 

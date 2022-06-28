@@ -43,7 +43,7 @@
 									"",
 									"pm.test(\"validate response\", function() {",
 									"    pm.response.to.be.json;",
-									"    pm.expect(pm.response.text()).to.include(\"preis\");",
+									"    pm.expect(pm.response.text()).to.include(\"price\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -206,7 +206,7 @@
 									"",
 									"pm.test(\"validate response\", function() {",
 									"    pm.response.to.be.json;",
-									"    pm.expect(pm.response.text()).to.include(\"beschreibung\");",
+									"    pm.expect(pm.response.text()).to.include(\"description\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -217,7 +217,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/list",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/list",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -226,7 +226,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"list"
 							]
 						}
@@ -252,7 +252,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -261,7 +261,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"read"
 							],
 							"query": [
@@ -293,7 +293,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b4",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -302,7 +302,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"read"
 							],
 							"query": [
@@ -334,7 +334,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -343,7 +343,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"read"
 							],
 							"query": [
@@ -375,7 +375,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/list",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/list",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -384,7 +384,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"list"
 							]
 						}
@@ -410,7 +410,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=ae73321e-31f4-4cbc-a751-55b575dd992f",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=ae73321e-31f4-4cbc-a751-55b575dd992f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -419,7 +419,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"read"
 							],
 							"query": [
@@ -451,7 +451,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=ae73321e-31f4-4cbc-a651-55b575dd992f",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=ae73321e-31f4-4cbc-a651-55b575dd992f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -460,7 +460,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"read"
 							],
 							"query": [
@@ -492,7 +492,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=31f4-4cbc-a651-55b575dd992f",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=31f4-4cbc-a651-55b575dd992f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -501,7 +501,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"read"
 							],
 							"query": [
@@ -546,32 +546,32 @@
 									"type": "text"
 								},
 								{
-									"key": "anzahlKerne",
+									"key": "coreCount",
 									"value": "4",
 									"type": "text"
 								},
 								{
-									"key": "stromverbrauch",
+									"key": "tdp",
 									"value": "95",
 									"type": "text"
 								},
 								{
-									"key": "taktfrequenz",
+									"key": "frequency",
 									"value": "3.5",
 									"type": "text"
 								},
 								{
-									"key": "sockel",
+									"key": "socket",
 									"value": "AM4",
 									"type": "text"
 								},
 								{
-									"key": "preis",
+									"key": "price",
 									"value": "50.95",
 									"type": "text"
 								},
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
 									"type": "text"
 								}
@@ -616,24 +616,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 3",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "4 Kerne, 8 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -642,7 +642,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -671,14 +671,14 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "HP",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -687,7 +687,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"create"
 							]
 						}
@@ -726,32 +726,32 @@
 									"type": "text"
 								},
 								{
-									"key": "anzahlKerne",
+									"key": "coreCount",
 									"value": "8",
 									"type": "text"
 								},
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
 									"type": "text"
 								},
 								{
-									"key": "stromverbrauch",
+									"key": "tdp",
 									"value": "65",
 									"type": "text"
 								},
 								{
-									"key": "taktfrequenz",
+									"key": "frequency",
 									"value": "3.7",
 									"type": "text"
 								},
 								{
-									"key": "sockel",
+									"key": "socket",
 									"value": "AM4",
 									"type": "text"
 								},
 								{
-									"key": "preis",
+									"key": "price",
 									"value": "249.00",
 									"type": "text"
 								}
@@ -806,32 +806,32 @@
 									"type": "text"
 								},
 								{
-									"key": "anzahlKerne",
+									"key": "coreCount",
 									"value": "8",
 									"type": "text"
 								},
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
 									"type": "text"
 								},
 								{
-									"key": "stromverbrauch",
+									"key": "tdp",
 									"value": "65",
 									"type": "text"
 								},
 								{
-									"key": "taktfrequenz",
+									"key": "frequency",
 									"value": "3.7",
 									"type": "text"
 								},
 								{
-									"key": "sockel",
+									"key": "socket",
 									"value": "AM4",
 									"type": "text"
 								},
 								{
-									"key": "preis",
+									"key": "price",
 									"value": "249.00",
 									"type": "text"
 								}
@@ -876,29 +876,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 9",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "12 Kerne, 24 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -907,7 +907,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -936,29 +936,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e9425547133f",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 9",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "12 Kerne, 24 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -967,7 +967,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -996,19 +996,19 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "0731b62d-d51d-4543-856a-431ce376db93",
 									"type": "text"
 								},
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "ASUS",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1017,7 +1017,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"update"
 							]
 						}
@@ -1046,19 +1046,19 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "0731b62d-d51d-4543-856a-431ce376db92",
 									"type": "text"
 								},
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "ASUS",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1067,7 +1067,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"update"
 							]
 						}
@@ -1183,7 +1183,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cc",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1192,12 +1192,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "5f376e30-6f1e-45ba-8229-b2967a3a38cc"
 								}
 							]
@@ -1224,7 +1224,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cd",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cd",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1233,12 +1233,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "5f376e30-6f1e-45ba-8229-b2967a3a38cd"
 								}
 							]
@@ -1265,7 +1265,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da27563741",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da27563741",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1274,12 +1274,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "014d6fad-dbea-496d-a19e-57da27563741"
 								}
 							]
@@ -1306,7 +1306,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da27563742",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da27563742",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1315,12 +1315,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "014d6fad-dbea-496d-a19e-57da27563742"
 								}
 							]
@@ -2330,24 +2330,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "R",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "4 Kerne, 8 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2356,7 +2356,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -2385,24 +2385,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen Epyc Threadripper",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "4 Kerne, 8 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2411,7 +2411,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -2440,24 +2440,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 5",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "E",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2466,7 +2466,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -2495,24 +2495,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 5",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "Eflsöahegusahdsjhofeadsioglkhylhsdhfasedieozighadslö",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2521,7 +2521,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -2550,24 +2550,24 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 5",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "4 Kerne, 8 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2576,7 +2576,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"create"
 							]
 						}
@@ -2605,14 +2605,14 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "H",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2621,7 +2621,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"create"
 							]
 						}
@@ -2650,14 +2650,14 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "HJJHhhsdfhEIIEEWW",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2666,7 +2666,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"create"
 							]
 						}
@@ -3815,29 +3815,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "R",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "12 Kerne, 24 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3846,7 +3846,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -3875,29 +3875,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Rasdfdsdsbasraserdsagyabsdgasfds",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "12 Kerne, 24 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3906,7 +3906,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -3935,29 +3935,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 9",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "E",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3966,7 +3966,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -3995,29 +3995,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 9",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "Ejewziuofgsajkgsdiylauzsdfoezgiuoa",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992f",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4026,7 +4026,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -4055,29 +4055,29 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e94255471337",
 									"type": "text"
 								},
 								{
-									"key": "nameReihe",
+									"key": "seriesName",
 									"value": "Ryzen 9",
 									"type": "text"
 								},
 								{
-									"key": "beschreibung",
+									"key": "description",
 									"value": "12 Kerne, 24 Threads",
 									"type": "text"
 								},
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "ae73321e-31f4-4cbc-a751-55b575dd992",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4086,7 +4086,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -4137,7 +4137,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4146,7 +4146,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"update"
 							]
 						}
@@ -4175,19 +4175,19 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "0731b62d-d51d-4543-856a-431ce376db93",
 									"type": "text"
 								},
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "A",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4196,7 +4196,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"update"
 							]
 						}
@@ -4225,19 +4225,19 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "0731b62d-d51d-4543-856a-431ce376db93",
 									"type": "text"
 								},
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "AHHHfffjasdkflkdeaz",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4246,7 +4246,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"update"
 							]
 						}
@@ -4275,19 +4275,19 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "0731b62d-d51d-4543-856a-431ce376db9",
 									"type": "text"
 								},
 								{
-									"key": "herstellerName",
+									"key": "manufacturerName",
 									"value": "ASUS",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4296,7 +4296,7 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"update"
 							]
 						}
@@ -4371,7 +4371,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=6efe75bf-fb5d-4d75-b923-e9425547133",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=6efe75bf-fb5d-4d75-b923-e9425547133",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4380,12 +4380,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"reihe",
+								"series",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "reiheUUID",
+									"key": "seriesUUID",
 									"value": "6efe75bf-fb5d-4d75-b923-e9425547133"
 								}
 							]
@@ -4416,7 +4416,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da2756374",
+							"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da2756374",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4425,12 +4425,12 @@
 							"path": [
 								"CPU_Retailer-1.0",
 								"resource",
-								"hersteller",
+								"manufacturer",
 								"delete"
 							],
 							"query": [
 								{
-									"key": "herstellerUUID",
+									"key": "manufacturerUUID",
 									"value": "014d6fad-dbea-496d-a19e-57da2756374"
 								}
 							]
@@ -4441,10 +4441,17 @@
 			]
 		},
 		{
-			"name": "0.0 Daten widerherstellen",
+			"name": "0.0 Daten wiederherstellen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
 					"raw": "http://localhost:8080/CPU_Retailer-1.0/resource/test/restore",
 					"protocol": "http",

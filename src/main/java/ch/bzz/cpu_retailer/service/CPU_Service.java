@@ -22,11 +22,11 @@ public class CPU_Service {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listeAlleCPUs() {
-        List<CPU> cpuListe = DataHandler.leseAlleCPUs();
+    public Response listAllCPUs() {
+        List<CPU> cpuList = DataHandler.readCPUs();
         return Response
                 .status(200)
-                .entity(cpuListe)
+                .entity(cpuList)
                 .build();
     }
 
@@ -38,11 +38,11 @@ public class CPU_Service {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response leseCPU(
+    public Response readCPU(
             @QueryParam("uuid") String cpuUUID
     ) {
         int httpstatus;
-        CPU cpu = DataHandler.leseCPUMitUUID(cpuUUID);
+        CPU cpu = DataHandler.readCPUbyUUID(cpuUUID);
         if (cpu != null && cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
             httpstatus = 200;
         } else if (!cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")){
@@ -62,22 +62,22 @@ public class CPU_Service {
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response erstelleCPU (
+    public Response createCPU (
             @Valid @BeanParam CPU cpu,
-            @FormParam("reiheUUID") String reiheUUID
+            @FormParam("seriesUUID") String seriesUUID
             ) {
         int httpstatus;
         String msg = "";
         cpu.setCpuUUID(UUID.randomUUID().toString());
-        if (reiheUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
-            cpu.setReiheUUID(reiheUUID);
+        if (seriesUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            cpu.setSeriesUUID(seriesUUID);
 
             httpstatus = 200;
 
-            DataHandler.cpuHinzu(cpu);
+            DataHandler.addCPU(cpu);
         } else {
             httpstatus = 400;
-            msg = "Fehler: Ungueltige reiheUUID";
+            msg = "Error: invalid seriesUUID";
         }
 
         Response response = Response
@@ -94,31 +94,31 @@ public class CPU_Service {
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response aktualisiereCPU(
+    public Response updateCPU(
             @Valid @BeanParam CPU cpu,
-            @FormParam("reiheUUID") String reiheUUID
+            @FormParam("seriesUUID") String seriesUUID
     ) {
         int httpstatus;
         String msg = "";
-        if (reiheUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
-            CPU alteCPU = DataHandler.leseCPUMitUUID(cpu.getCpuUUID());
-            if (alteCPU != null) {
-                alteCPU.setName(cpu.getName());
-                alteCPU.setAnzahlKerne(cpu.getAnzahlKerne());
-                alteCPU.setStromverbrauch(cpu.getStromverbrauch());
-                alteCPU.setTaktfrequenz(cpu.getTaktfrequenz());
-                alteCPU.setSockel(cpu.getSockel());
-                alteCPU.setPreis(cpu.getPreis());
-                alteCPU.setReiheUUID(reiheUUID);
-                DataHandler.cpuAktuell();
+        if (seriesUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
+            CPU oldCPU = DataHandler.readCPUbyUUID(cpu.getCpuUUID());
+            if (oldCPU != null) {
+                oldCPU.setName(cpu.getName());
+                oldCPU.setCoreCount(cpu.getCoreCount());
+                oldCPU.setTDP(cpu.getTDP());
+                oldCPU.setFrequency(cpu.getFrequency());
+                oldCPU.setSocket(cpu.getSocket());
+                oldCPU.setPrice(cpu.getPrice());
+                oldCPU.setSeriesUUID(seriesUUID);
+                DataHandler.updateCPU();
                 httpstatus = 200;
             } else {
                 httpstatus = 404;
-                msg = "CPU mit dieser UUID existiert nicht";
+                msg = "CPU with this UUID does not exist";
             }
         } else {
             httpstatus = 400;
-            msg = "Fehler: Ungueltige reiheUUID";
+            msg = "Error: invalid seriesUUID";
         }
 
         Response response = Response
@@ -131,20 +131,20 @@ public class CPU_Service {
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response cpuLoeschen(
+    public Response deleteCPU(
             @QueryParam("cpuUUID") String cpuUUID
     ) {
         int httpstatus;
         String msg = "";
         if (cpuUUID.matches("[a-zA-Z0-9]{8}(-[a-zA-Z0-9]{4}){3}-[a-zA-Z0-9]{12}")) {
             httpstatus = 200;
-            if (!DataHandler.cpuLoeschen(cpuUUID)) {
+            if (!DataHandler.deleteCPU(cpuUUID)) {
                 httpstatus = 410;
-                msg = "CPU mit dieser UUID existiert nicht";
+                msg = "CPU with this UUID does not exist";
             }
         } else {
             httpstatus = 400;
-            msg = "CPU-UUID formal falsch";
+            msg = "CPU-UUID is invalid";
         }
 
         return Response

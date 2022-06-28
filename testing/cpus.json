@@ -2,31 +2,31 @@
     {
         "cpuUUID": "29ec9509-b760-4f96-b2f0-ba775909e2ef",
         "name": "5600X",
-        "anzahlKerne": "6",
-        "reiheUUID": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
-        "stromverbrauch": "65",
-        "taktfrequenz": "3.7",
-        "sockel": "AM4",
-        "preis": "  249.00 "
+        "coreCount": "6",
+        "seriesUUID": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
+        "tdp": "65",
+        "frequency": "3.7",
+        "socket": "AM4",
+        "price": "  249.00 "
     },
     {
         "cpuUUID": "450d4c30-3f1d-4fe9-a325-6a83a928eb5b",
         "name": "1600X",
-        "anzahlKerne": "6",
-        "stromverbrauch": "95",
-        "taktfrequenz": "3.6",
-        "sockel": "AM4",
-        "preis": "  314.00 ",
-        "reiheUUID": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5"
+        "coreCount": "6",
+        "tdp": "95",
+        "frequency": "3.6",
+        "socket": "AM4",
+        "price": "  314.00 ",
+        "seriesUUID": "ceb02a4b-ba53-4a0a-b90e-ca05366649b5"
      },
     {
         "cpuUUID": "cdde67c9-0b53-415d-ad5e-ab75e8c6f447",
         "name": "5800X",
-        "anzahlKerne": "8",
-        "stromverbrauch": "105",
-        "taktfrequenz": "3.8",
-        "sockel": "AM4",
-        "preis": "  385.00 ",
-        "reiheUUID": "6efe75bf-fb5d-4d75-b923-e94255471337"
+        "coreCount": "8",
+        "tdp": "105",
+        "frequency": "3.8",
+        "socket": "AM4",
+        "price": "  385.00 ",
+        "seriesUUID": "6efe75bf-fb5d-4d75-b923-e94255471337"
     }
 ]

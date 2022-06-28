@@ -19,14 +19,14 @@ public class TestService {
 
         return Response
                 .status(200)
-                .entity("Test erfolgreich")
+                .entity("Test successful")
                 .build();
     }
 
     @GET
     @Path("restore")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response wiederherstellen() {
+    public Response restoreData() {
         try {
             java.nio.file.Path path = Paths.get(Config.getProperty("cpuJSON"));
             String filename = path.getFileName().toString();
@@ -36,29 +36,29 @@ public class TestService {
             FileOutputStream fileOutputStream = new FileOutputStream(Config.getProperty("cpuJSON"));
             fileOutputStream.write(cpuJSON);
 
-            path = Paths.get(Config.getProperty("reiheJSON"));
+            path = Paths.get(Config.getProperty("seriesJSON"));
             filename = path.getFileName().toString();
             folder = path.getParent().toString();
 
             byte[] reiheJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
-            fileOutputStream = new FileOutputStream(Config.getProperty("reiheJSON"));
+            fileOutputStream = new FileOutputStream(Config.getProperty("seriesJSON"));
             fileOutputStream.write(reiheJSON);
 
-            path = Paths.get(Config.getProperty("herstellerJSON"));
+            path = Paths.get(Config.getProperty("manufacturerJSON"));
             filename = path.getFileName().toString();
             folder = path.getParent().toString();
 
             byte[] herstellerJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
-            fileOutputStream = new FileOutputStream(Config.getProperty("herstellerJSON"));
+            fileOutputStream = new FileOutputStream(Config.getProperty("manufacturerJSON"));
             fileOutputStream.write(herstellerJSON);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        DataHandler.initListen();
+        DataHandler.initLists();
         return Response
                 .status(200)
-                .entity("Erfolgreich")
+                .entity("Successful")
                 .build();
     }
 }

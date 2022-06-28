@@ -1,7 +1,7 @@
 {
-	"id": "04a9a908-20eb-47c1-8db6-7fffea264351",
+	"id": "075a9262-c05a-42ad-9e18-8086c59467a3",
 	"name": "CPU-Retailer",
-	"timestamp": "2022-06-14T20:18:20.362Z",
+	"timestamp": "2022-06-22T09:10:49.543Z",
 	"collection_id": "22b440aa-6d51-4849-b930-d6e34a3fdce8",
 	"folder_id": 0,
 	"environment_id": "0",
@@ -10,9 +10,9 @@
 	"results": [
 		{
 			"id": "2d8eddce-dbdc-48b1-b172-69b8598f7812",
-			"name": "0.0 Daten widerherstellen",
+			"name": "0.0 Daten wiederherstellen",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/test/restore",
-			"time": 26,
+			"time": 16,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -20,7 +20,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				26
+				16
 			],
 			"allTests": [
 				{}
@@ -30,7 +30,7 @@
 			"id": "e2b954ec-1bff-43ce-8e2a-289d18006430",
 			"name": "0.1 Testservice",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/test/test",
-			"time": 7,
+			"time": 10,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -38,7 +38,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				7
+				10
 			],
 			"allTests": [
 				{}
@@ -48,7 +48,7 @@
 			"id": "d49f7096-0263-4843-b21f-7ccb97af9710",
 			"name": "1.0 Liste alle CPUs",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/list",
-			"time": 392,
+			"time": 440,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -68,7 +68,7 @@
 				}
 			},
 			"times": [
-				392
+				440
 			],
 			"allTests": [
 				{
@@ -81,7 +81,7 @@
 			"id": "c8b5b315-281d-414c-b08a-4babf6ede367",
 			"name": "1.1 Lese CPU",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/read?uuid=29ec9509-b760-4f96-b2f0-ba775909e2ef",
-			"time": 15,
+			"time": 10,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -96,7 +96,7 @@
 				}
 			},
 			"times": [
-				15
+				10
 			],
 			"allTests": [
 				{
@@ -108,259 +108,10 @@
 			"id": "4f540397-c50f-4d60-a135-d1355613259f",
 			"name": "1.2 Lese unbekannte CPU",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/read?uuid=29ec9509-c760-4f96-b2f0-ba775909e2ef",
-			"time": 22,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				22
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "c90374a4-76aa-40d1-af6b-339d9be32e0b",
-			"name": "1.3 Lese ungültige CPU",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/read?uuid=29ec9509-c760-4f96-b2f0-ba775909e2",
-			"time": 8,
-			"responseCode": {
-				"code": 410,
-				"name": "Gone"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				8
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "177fdc39-4207-423a-bccc-0f7d10396b09",
-			"name": "1.4 Liste alle Reihen",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/list",
-			"time": 14,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true,
-				"validate response": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				},
-				"validate response": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				14
-			],
-			"allTests": [
-				{
-					"Status test": true,
-					"validate response": true
-				}
-			]
-		},
-		{
-			"id": "9e0eb9f9-6bf8-4135-9053-105cc7215531",
-			"name": "1.5 Lese Reihe",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
-			"time": 33,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				33
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "ba6702b9-5d36-46bf-80fa-304598c9bfa0",
-			"name": "1.6 Lese unbekannte Reihe",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b4",
-			"time": 9,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				9
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "ea3c8ab7-ac9c-4353-b9c1-bddc99a67fe2",
-			"name": "1.7 Lese ungültige Reihe",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649",
-			"time": 7,
-			"responseCode": {
-				"code": 410,
-				"name": "Gone"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				7
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "61d9efff-124e-4889-b777-574fcf604edd",
-			"name": "1.8 Liste alle Hersteller",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/list",
-			"time": 8,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				8
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "e7f14fa0-b12f-4639-babb-d717d2aa2485",
-			"name": "1.9 Lese Hersteller",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=ae73321e-31f4-4cbc-a751-55b575dd992f",
-			"time": 18,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				18
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "596bec96-581d-46a8-b74f-2fedceaf6263",
-			"name": "1.10 Lese unbekannten Hersteller",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=ae73321e-31f4-4cbc-a651-55b575dd992f",
-			"time": 13,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				13
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "8bc62fb6-f36f-4f33-9ea8-d7cc10806724",
-			"name": "1.11 Lese ungültigen Hersteller",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/read?uuid=31f4-4cbc-a651-55b575dd992f",
 			"time": 5,
 			"responseCode": {
-				"code": 410,
-				"name": "Gone"
+				"code": 404,
+				"name": "Not Found"
 			},
 			"tests": {
 				"Status test": true
@@ -381,10 +132,70 @@
 			]
 		},
 		{
-			"id": "3916daf5-143d-40a2-bbfa-df3577c2992e",
-			"name": "2.1 Neue CPU",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 131,
+			"id": "c90374a4-76aa-40d1-af6b-339d9be32e0b",
+			"name": "1.3 Lese ungültige CPU",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/read?uuid=29ec9509-c760-4f96-b2f0-ba775909e2",
+			"time": 6,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "177fdc39-4207-423a-bccc-0f7d10396b09",
+			"name": "1.4 Liste alle Reihen",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/list",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true,
+				"validate response": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				},
+				"validate response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"validate response": true
+				}
+			]
+		},
+		{
+			"id": "9e0eb9f9-6bf8-4135-9053-105cc7215531",
+			"name": "1.5 Lese Reihe",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b5",
+			"time": 8,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -399,7 +210,7 @@
 				}
 			},
 			"times": [
-				131
+				8
 			],
 			"allTests": [
 				{
@@ -408,10 +219,64 @@
 			]
 		},
 		{
-			"id": "bc782694-d093-44ec-89cb-f2464fd3f1a5",
-			"name": "2.2 Neue Reihe",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
-			"time": 46,
+			"id": "ba6702b9-5d36-46bf-80fa-304598c9bfa0",
+			"name": "1.6 Lese unbekannte Reihe",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649b4",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "ea3c8ab7-ac9c-4353-b9c1-bddc99a67fe2",
+			"name": "1.7 Lese ungültige Reihe",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/read?uuid=ceb02a4b-ba53-4a0a-b90e-ca05366649",
+			"time": 11,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "61d9efff-124e-4889-b777-574fcf604edd",
+			"name": "1.8 Liste alle Hersteller",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/list",
+			"time": 7,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -426,7 +291,7 @@
 				}
 			},
 			"times": [
-				46
+				7
 			],
 			"allTests": [
 				{
@@ -435,9 +300,9 @@
 			]
 		},
 		{
-			"id": "6381bc55-6011-4a47-960d-2602cb12a6f0",
-			"name": "2.3 Neuer Hersteller",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+			"id": "e7f14fa0-b12f-4639-babb-d717d2aa2485",
+			"name": "1.9 Lese Hersteller",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=ae73321e-31f4-4cbc-a751-55b575dd992f",
 			"time": 12,
 			"responseCode": {
 				"code": 200,
@@ -462,37 +327,10 @@
 			]
 		},
 		{
-			"id": "57d33764-f18c-43aa-9e74-27a317a0db78",
-			"name": "3.1 CPU aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 28,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				28
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "c2f58edc-e962-4095-8b1a-b36fc75a15a4",
-			"name": "3.2 unbekannte CPU aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 17,
+			"id": "596bec96-581d-46a8-b74f-2fedceaf6263",
+			"name": "1.10 Lese unbekannten Hersteller",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=ae73321e-31f4-4cbc-a651-55b575dd992f",
+			"time": 21,
 			"responseCode": {
 				"code": 404,
 				"name": "Not Found"
@@ -507,7 +345,169 @@
 				}
 			},
 			"times": [
-				17
+				21
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "8bc62fb6-f36f-4f33-9ea8-d7cc10806724",
+			"name": "1.11 Lese ungültigen Hersteller",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/read?uuid=31f4-4cbc-a651-55b575dd992f",
+			"time": 13,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "3916daf5-143d-40a2-bbfa-df3577c2992e",
+			"name": "2.1 Neue CPU",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 78,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				78
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "bc782694-d093-44ec-89cb-f2464fd3f1a5",
+			"name": "2.2 Neue Reihe",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 24,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "6381bc55-6011-4a47-960d-2602cb12a6f0",
+			"name": "2.3 Neuer Hersteller",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "57d33764-f18c-43aa-9e74-27a317a0db78",
+			"name": "3.1 CPU aktualisieren",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "c2f58edc-e962-4095-8b1a-b36fc75a15a4",
+			"name": "3.2 unbekannte CPU aktualisieren",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 11,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
 			],
 			"allTests": [
 				{
@@ -518,11 +518,38 @@
 		{
 			"id": "4d22d461-55b2-45aa-89c9-1be64ed35d5d",
 			"name": "3.3 Reihe aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 9,
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 18,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "f082061a-70e2-4c43-b207-3cfb8f656b73",
+			"name": "3.4 unbekannte Reihe aktualisieren",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
 			},
 			"tests": {
 				"Status test": true
@@ -543,37 +570,10 @@
 			]
 		},
 		{
-			"id": "f082061a-70e2-4c43-b207-3cfb8f656b73",
-			"name": "3.4 unbekannte Reihe aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 14,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				14
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
 			"id": "f1945276-334e-4d5a-8946-f91df7082ba1",
 			"name": "3.5 Hersteller aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
-			"time": 14,
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
+			"time": 18,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -588,7 +588,7 @@
 				}
 			},
 			"times": [
-				14
+				18
 			],
 			"allTests": [
 				{
@@ -599,7 +599,7 @@
 		{
 			"id": "29323c4d-4508-4ea6-beb2-b96f3b74f689",
 			"name": "3.6 unbekannten Hersteller aktualisieren",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
 			"time": 20,
 			"responseCode": {
 				"code": 404,
@@ -627,7 +627,7 @@
 			"id": "6aeb4f0f-a466-4343-a377-0b31f41decac",
 			"name": "4.1 CPU löschen",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/delete?cpuUUID=450d4c30-3f1d-4fe9-a325-6a83a928eb5b",
-			"time": 30,
+			"time": 22,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -642,7 +642,7 @@
 				}
 			},
 			"times": [
-				30
+				22
 			],
 			"allTests": [
 				{
@@ -654,6 +654,60 @@
 			"id": "b23ff17a-28ae-441f-aa24-ed9e62240abf",
 			"name": "4.2 unbekannte CPU löschen",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/delete?cpuUUID=450d4c30-3f1d-4fe9-a325-6a83a928eb5g",
+			"time": 7,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "728d619a-75c8-4fa1-9259-10ddf47bd20f",
+			"name": "4.3 Reihe löschen",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cc",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "473e5db7-c257-4359-b50f-c48226c99fb9",
+			"name": "4.4 unbekannte Reihe löschen",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cd",
 			"time": 9,
 			"responseCode": {
 				"code": 410,
@@ -678,64 +732,10 @@
 			]
 		},
 		{
-			"id": "728d619a-75c8-4fa1-9259-10ddf47bd20f",
-			"name": "4.3 Reihe löschen",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cc",
-			"time": 12,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				12
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "473e5db7-c257-4359-b50f-c48226c99fb9",
-			"name": "4.4 unbekannte Reihe löschen",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=5f376e30-6f1e-45ba-8229-b2967a3a38cd",
-			"time": 6,
-			"responseCode": {
-				"code": 410,
-				"name": "Gone"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				6
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
 			"id": "c0b3810f-8f80-49bf-9ea7-55bcd6e757a4",
 			"name": "4.5 Hersteller löschen",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da27563741",
-			"time": 12,
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da27563741",
+			"time": 23,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -750,7 +750,7 @@
 				}
 			},
 			"times": [
-				12
+				23
 			],
 			"allTests": [
 				{
@@ -761,7 +761,7 @@
 		{
 			"id": "f8dfbd5b-9c87-42fc-99e1-483248971867",
 			"name": "4.6 unbekannten Hersteller löschen",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da27563742",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da27563742",
 			"time": 10,
 			"responseCode": {
 				"code": 410,
@@ -789,7 +789,7 @@
 			"id": "df9712a7-39b4-4551-b72e-16b5f6b7f352",
 			"name": "1.1 CPU erstellen, Name zu kurz",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 125,
+			"time": 23,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -804,7 +804,7 @@
 				}
 			},
 			"times": [
-				125
+				23
 			],
 			"allTests": [
 				{
@@ -816,7 +816,7 @@
 			"id": "6b53776e-8bf3-4d89-8126-3131a69abe57",
 			"name": "1.2 CPU erstellen, Name zu lang",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 14,
+			"time": 21,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -831,7 +831,7 @@
 				}
 			},
 			"times": [
-				14
+				21
 			],
 			"allTests": [
 				{
@@ -843,7 +843,7 @@
 			"id": "ea7a423d-aaa8-489d-923c-31013ada8c85",
 			"name": "1.3 CPU erstellen, Anzahl Kerne zu klein",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 109,
+			"time": 15,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -858,7 +858,7 @@
 				}
 			},
 			"times": [
-				109
+				15
 			],
 			"allTests": [
 				{
@@ -869,222 +869,6 @@
 		{
 			"id": "32a078e3-4edb-4481-939c-1a5b133e43de",
 			"name": "1.4 CPU erstellen, Anzahl Kerne zu gross",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 56,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				56
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "d2de043e-55af-4227-bb9c-eabae9207175",
-			"name": "1.5 CPU erstellen, Stromverbrauch zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 16,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				16
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "6ee681f7-2ea8-4825-951f-86f4d115fbe4",
-			"name": "1.6 CPU erstellen, Stromverbrauch zu gross",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 46,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				46
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "3751698e-69b1-4645-97be-b8b969979491",
-			"name": "1.7 CPU erstellen, Taktfrequenz zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 14,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				14
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "ce1e1a9b-25f3-4074-9588-1f819ee06ce0",
-			"name": "1.8 CPU erstellen, Taktfrequenz zu gross",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 26,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				26
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "75016980-d67f-471a-b199-3a8494810267",
-			"name": "1.9 CPU erstellen, Sockelname zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 13,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				13
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "d55199f5-ce66-4d4b-bfec-3eec512f71e3",
-			"name": "1.10 CPU erstellen, Sockelname zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 16,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				16
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "13ef2e19-0b1c-46c0-a47a-3708aedd239c",
-			"name": "1.11 CPU erstellen, Preis zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 10,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				10
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "796fe069-cb1d-45fe-85eb-327a1550418c",
-			"name": "1.12 CPU erstellen, Preis zu gross",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
 			"time": 12,
 			"responseCode": {
@@ -1110,10 +894,10 @@
 			]
 		},
 		{
-			"id": "1d9967eb-44ee-42b9-8fec-68fa5a2f19a6",
-			"name": "1.13 CPU erstellen, ReiheUUID formal falsch",
+			"id": "d2de043e-55af-4227-bb9c-eabae9207175",
+			"name": "1.5 CPU erstellen, Stromverbrauch zu klein",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
-			"time": 14,
+			"time": 11,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1128,7 +912,7 @@
 				}
 			},
 			"times": [
-				14
+				11
 			],
 			"allTests": [
 				{
@@ -1137,10 +921,10 @@
 			]
 		},
 		{
-			"id": "70d99f28-8de6-4c27-b63d-dbe0771d2c47",
-			"name": "1.14 Reihe erstellen, Name Reihe zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
-			"time": 17,
+			"id": "6ee681f7-2ea8-4825-951f-86f4d115fbe4",
+			"name": "1.6 CPU erstellen, Stromverbrauch zu gross",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 25,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1155,7 +939,7 @@
 				}
 			},
 			"times": [
-				17
+				25
 			],
 			"allTests": [
 				{
@@ -1164,36 +948,9 @@
 			]
 		},
 		{
-			"id": "e94bb994-67ee-43ee-8887-06a362cb13a7",
-			"name": "1.15 Reihe erstellen, Name Reihe zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
-			"time": 20,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				20
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "366c9975-75e2-4821-8252-698ce64ffdfb",
-			"name": "1.16 Reihe erstellen, Beschreibung zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+			"id": "3751698e-69b1-4645-97be-b8b969979491",
+			"name": "1.7 CPU erstellen, Taktfrequenz zu klein",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
 			"time": 18,
 			"responseCode": {
 				"code": 400,
@@ -1218,9 +975,117 @@
 			]
 		},
 		{
-			"id": "7c40a626-607e-4047-add6-e95707d80fc6",
-			"name": "1.17 Reihe erstellen, Beschreibung zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
+			"id": "ce1e1a9b-25f3-4074-9588-1f819ee06ce0",
+			"name": "1.8 CPU erstellen, Taktfrequenz zu gross",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 15,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "75016980-d67f-471a-b199-3a8494810267",
+			"name": "1.9 CPU erstellen, Sockelname zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 17,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "d55199f5-ce66-4d4b-bfec-3eec512f71e3",
+			"name": "1.10 CPU erstellen, Sockelname zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 26,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "13ef2e19-0b1c-46c0-a47a-3708aedd239c",
+			"name": "1.11 CPU erstellen, Preis zu klein",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "796fe069-cb1d-45fe-85eb-327a1550418c",
+			"name": "1.12 CPU erstellen, Preis zu gross",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
 			"time": 9,
 			"responseCode": {
 				"code": 400,
@@ -1245,10 +1110,10 @@
 			]
 		},
 		{
-			"id": "e0fc7090-7e53-4bf6-9ce0-be7a657e9a6d",
-			"name": "1.18 Reihe erstellen, HerstellerUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/create",
-			"time": 22,
+			"id": "1d9967eb-44ee-42b9-8fec-68fa5a2f19a6",
+			"name": "1.13 CPU erstellen, ReiheUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/create",
+			"time": 11,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1263,7 +1128,142 @@
 				}
 			},
 			"times": [
-				22
+				11
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "70d99f28-8de6-4c27-b63d-dbe0771d2c47",
+			"name": "1.14 Reihe erstellen, Name Reihe zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 14,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e94bb994-67ee-43ee-8887-06a362cb13a7",
+			"name": "1.15 Reihe erstellen, Name Reihe zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 16,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "366c9975-75e2-4821-8252-698ce64ffdfb",
+			"name": "1.16 Reihe erstellen, Beschreibung zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 17,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "7c40a626-607e-4047-add6-e95707d80fc6",
+			"name": "1.17 Reihe erstellen, Beschreibung zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 10,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e0fc7090-7e53-4bf6-9ce0-be7a657e9a6d",
+			"name": "1.18 Reihe erstellen, HerstellerUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/create",
+			"time": 20,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
 			],
 			"allTests": [
 				{
@@ -1274,7 +1274,169 @@
 		{
 			"id": "d4ed8b45-4246-4974-ac6f-de60f479a8a0",
 			"name": "1.19 Hersteller erstellen, Herstellername zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
+			"time": 14,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "2488c5ba-e476-42bf-bf62-dc8862357a74",
+			"name": "1.20 Hersteller erstellen, Herstellername zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/create",
+			"time": 12,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "b2ff202b-4904-42e7-8ab7-1913bd1e917f",
+			"name": "2.1 CPU aktualisieren, Name zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 29,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				29
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "146c95a3-e1a1-436e-9c62-b1aa5d7cc903",
+			"name": "2.2 CPU aktualisieren, Name zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 23,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "acdd094b-eeec-4b0a-9dcb-fbd6d6fa02eb",
+			"name": "2.3 CPU aktualisieren, Anzahl Kerne zu klein",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "a4a7ec78-cc55-497f-934e-c20e18cfdc98",
+			"name": "2.4 CPU aktualisieren, Anzahl Kerne zu gross",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "8b029617-af2a-41a3-97e7-955e4de3df2e",
+			"name": "2.5 CPU aktualisieren, Stromverbrauch zu klein",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
 			"time": 19,
 			"responseCode": {
 				"code": 400,
@@ -1299,10 +1461,10 @@
 			]
 		},
 		{
-			"id": "2488c5ba-e476-42bf-bf62-dc8862357a74",
-			"name": "1.20 Hersteller erstellen, Herstellername zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/create",
-			"time": 9,
+			"id": "c452bb63-dec4-4149-b2ee-862b218b7c4d",
+			"name": "2.6 CPU aktualisieren, Stromverbrauch zu gross",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
+			"time": 39,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1317,7 +1479,7 @@
 				}
 			},
 			"times": [
-				9
+				39
 			],
 			"allTests": [
 				{
@@ -1326,8 +1488,8 @@
 			]
 		},
 		{
-			"id": "b2ff202b-4904-42e7-8ab7-1913bd1e917f",
-			"name": "2.1 CPU aktualisieren, Name zu kurz",
+			"id": "65adac87-ec18-4d27-bde0-f64d4accb748",
+			"name": "2.7 CPU aktualisieren, Taktfrequenz zu klein",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
 			"time": 11,
 			"responseCode": {
@@ -1353,172 +1515,10 @@
 			]
 		},
 		{
-			"id": "146c95a3-e1a1-436e-9c62-b1aa5d7cc903",
-			"name": "2.2 CPU aktualisieren, Name zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 32,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				32
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "acdd094b-eeec-4b0a-9dcb-fbd6d6fa02eb",
-			"name": "2.3 CPU aktualisieren, Anzahl Kerne zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 17,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				17
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "a4a7ec78-cc55-497f-934e-c20e18cfdc98",
-			"name": "2.4 CPU aktualisieren, Anzahl Kerne zu gross",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 31,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				31
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "8b029617-af2a-41a3-97e7-955e4de3df2e",
-			"name": "2.5 CPU aktualisieren, Stromverbrauch zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 12,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				12
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "c452bb63-dec4-4149-b2ee-862b218b7c4d",
-			"name": "2.6 CPU aktualisieren, Stromverbrauch zu gross",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 20,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				20
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "65adac87-ec18-4d27-bde0-f64d4accb748",
-			"name": "2.7 CPU aktualisieren, Taktfrequenz zu klein",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 21,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				21
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
 			"id": "755ea7a1-8f31-41df-afb3-398207783a9d",
 			"name": "2.8 CPU aktualisieren, Taktfrequenz zu gross",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 26,
+			"time": 16,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1533,7 +1533,7 @@
 				}
 			},
 			"times": [
-				26
+				16
 			],
 			"allTests": [
 				{
@@ -1572,7 +1572,7 @@
 			"id": "05f61033-861b-4f50-9e04-83459031e0e2",
 			"name": "2.10 CPU aktualisieren, Sockelname zu lang",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 15,
+			"time": 34,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1587,7 +1587,7 @@
 				}
 			},
 			"times": [
-				15
+				34
 			],
 			"allTests": [
 				{
@@ -1599,7 +1599,7 @@
 			"id": "d517a9c6-de33-4bb7-ae62-3f9cfe034887",
 			"name": "2.11 CPU aktualisieren, Preis zu klein",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 30,
+			"time": 22,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1614,7 +1614,7 @@
 				}
 			},
 			"times": [
-				30
+				22
 			],
 			"allTests": [
 				{
@@ -1626,7 +1626,7 @@
 			"id": "f8c11cf2-1ab2-4737-8d55-f0d686c76194",
 			"name": "2.12 CPU aktualisieren, Preis zu gross",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 17,
+			"time": 29,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1641,7 +1641,7 @@
 				}
 			},
 			"times": [
-				17
+				29
 			],
 			"allTests": [
 				{
@@ -1680,276 +1680,6 @@
 			"id": "5df8a57d-a480-4c01-9ade-6753c967af37",
 			"name": "2.14 CPU aktualisieren, CPU-UUID formal falsch",
 			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/update",
-			"time": 14,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				14
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "2e4a3f25-269f-4ea2-804f-9dbe820a0f17",
-			"name": "2.15 Reihe aktualisieren, Name Reihe zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 34,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				34
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "e9b3d6c7-80a6-4111-b164-7506397e7ed3",
-			"name": "2.16 Reihe aktualisieren, Name Reihe zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 14,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				14
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "60407e2e-b189-47d2-a2a2-2aae35e9237c",
-			"name": "2.17 Reihe aktualisieren, Beschreibung zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 25,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				25
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "6e678f00-10a1-495d-a051-4bc2c304b856",
-			"name": "2.18 Reihe aktualisieren, Beschreibung zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 15,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				15
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "126e4e1b-112d-4bb5-a4ca-dbd7a2e7f6fa",
-			"name": "2.19 Reihe aktualisieren, HerstellerUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 23,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				23
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "eaf14b66-472d-4437-a63b-fb1c0585175d",
-			"name": "2.20 Reihe aktualisieren, ReiheUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/update",
-			"time": 18,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				18
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "e0308a25-6a3d-4f27-8898-4946e1eb3e34",
-			"name": "2.21 Hersteller aktualisieren, Herstellername zu kurz",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
-			"time": 9,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				9
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "aa7d202d-b434-43a2-b3c8-455099e1c86d",
-			"name": "2.22 Hersteller aktualisieren, Herstellername zu lang",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
-			"time": 32,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				32
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "67b17b50-4369-4d57-85eb-39084c9582fb",
-			"name": "2.23 Hersteller aktualisieren, HerstellerUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/update",
-			"time": 19,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status test": true
-			},
-			"testPassFailCounts": {
-				"Status test": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				19
-			],
-			"allTests": [
-				{
-					"Status test": true
-				}
-			]
-		},
-		{
-			"id": "0152d16c-e773-430e-9943-2885558833f3",
-			"name": "3.1 CPU löschen, CPU-UUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/delete?cpuUUID=cdde67c9-0b53-415d-ad5e-ab75e8c6f44",
 			"time": 13,
 			"responseCode": {
 				"code": 400,
@@ -1974,10 +1704,10 @@
 			]
 		},
 		{
-			"id": "f97b571e-96e8-45c9-b703-8fa1202b78fb",
-			"name": "3.2 Reihe löschen, ReiheUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/reihe/delete?reiheUUID=6efe75bf-fb5d-4d75-b923-e9425547133",
-			"time": 12,
+			"id": "2e4a3f25-269f-4ea2-804f-9dbe820a0f17",
+			"name": "2.15 Reihe aktualisieren, Name Reihe zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 8,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1992,7 +1722,277 @@
 				}
 			},
 			"times": [
-				12
+				8
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e9b3d6c7-80a6-4111-b164-7506397e7ed3",
+			"name": "2.16 Reihe aktualisieren, Name Reihe zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 23,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "60407e2e-b189-47d2-a2a2-2aae35e9237c",
+			"name": "2.17 Reihe aktualisieren, Beschreibung zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 19,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "6e678f00-10a1-495d-a051-4bc2c304b856",
+			"name": "2.18 Reihe aktualisieren, Beschreibung zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 22,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				22
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "126e4e1b-112d-4bb5-a4ca-dbd7a2e7f6fa",
+			"name": "2.19 Reihe aktualisieren, HerstellerUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "eaf14b66-472d-4437-a63b-fb1c0585175d",
+			"name": "2.20 Reihe aktualisieren, ReiheUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/update",
+			"time": 20,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "e0308a25-6a3d-4f27-8898-4946e1eb3e34",
+			"name": "2.21 Hersteller aktualisieren, Herstellername zu kurz",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
+			"time": 13,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "aa7d202d-b434-43a2-b3c8-455099e1c86d",
+			"name": "2.22 Hersteller aktualisieren, Herstellername zu lang",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
+			"time": 10,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "67b17b50-4369-4d57-85eb-39084c9582fb",
+			"name": "2.23 Hersteller aktualisieren, HerstellerUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/update",
+			"time": 26,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "0152d16c-e773-430e-9943-2885558833f3",
+			"name": "3.1 CPU löschen, CPU-UUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/cpu/delete?cpuUUID=cdde67c9-0b53-415d-ad5e-ab75e8c6f44",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "f97b571e-96e8-45c9-b703-8fa1202b78fb",
+			"name": "3.2 Reihe löschen, ReiheUUID formal falsch",
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/series/delete?seriesUUID=6efe75bf-fb5d-4d75-b923-e9425547133",
+			"time": 14,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
 			],
 			"allTests": [
 				{
@@ -2003,8 +2003,8 @@
 		{
 			"id": "29a7c81d-c29b-4d52-8a69-9c1a4e283d87",
 			"name": "3.3 Hersteller löschen, HerstellerUUID formal falsch",
-			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/hersteller/delete?herstellerUUID=014d6fad-dbea-496d-a19e-57da2756374",
-			"time": 12,
+			"url": "http://localhost:8080/CPU_Retailer-1.0/resource/manufacturer/delete?manufacturerUUID=014d6fad-dbea-496d-a19e-57da2756374",
+			"time": 14,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -2019,7 +2019,7 @@
 				}
 			},
 			"times": [
-				12
+				14
 			],
 			"allTests": [
 				{
@@ -2029,7 +2029,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 2032,
+	"totalTime": 1653,
 	"collection": {
 		"requests": [
 			{
